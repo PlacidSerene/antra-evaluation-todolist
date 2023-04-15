@@ -1,8 +1,29 @@
 {
   "todos": [
     {
-      "content": "sdsd",
+      "content": "lorem 1",
+      "status": "complete",
       "id": 1
+    },
+    {
+      "content": "lorem 2",
+      "status": "complete",
+      "id": 2
+    },
+    {
+      "content": "lorem 3",
+      "status": "pending",
+      "id": 3
+    },
+    {
+      "content": "lorem 4",
+      "status": "pending",
+      "id": 4
+    },
+    {
+      "content": "Hello world 12",
+      "status": "pending",
+      "id": 5
     }
   ]
 }

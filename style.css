@@ -1,43 +1,119 @@
-.app{
+.app {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 5px;
   width: fit-content;
-  padding:10px;
+  padding: 10px;
   text-align: center;
-  gap:10px;
+  gap: 10px;
   align-items: stretch;
-
+  justify-content: space-between;
 }
 
-html{
+html {
   display: flex;
   justify-content: center;
 }
 
-.form{
+.form {
   display: flex;
-  flex-direction: row;
-  gap:10px;
+  /* flex-direction: row; */
+  justify-content: center;
+  gap: 10px;
 }
-
-.todo-list{
-  padding:0;
+.table {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+.todo-list {
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  gap:10px;
+  gap: 10px;
 }
 
-.todo-list li{
+.todo-list li {
   display: flex;
   justify-content: space-between;
 }
-.todo-list li span{
+.todo-list li span {
   flex-grow: 1;
   text-align: center;
 }
 
+/* completed-todo-list */
+.completed-todo-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 10px;
+}
 
+.completed-todo-list li {
+  display: flex;
+  justify-content: space-between;
+}
+.completed-todo-list li span {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.submit-btn {
+  background-color: #008cba;
+  color: #fff;
+  padding: 4px 7px;
+  border-radius: 5px;
+}
+
+.pending,
+.completed {
+  border: 0.5px solid #f0f0f0;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5%;
+  padding-top: 0.2em;
+  width: 50%;
+}
+
+.title {
+  font-size: 1rem;
+  text-align: left;
+}
+
+/* .delete-btn,
+.edit-btn,
+.right-btn,
+.left-btn {
+  width: 2rem;
+  height: 1.5rem;
+} */
+
+/* .delete-btn,
+.right-btn,
+.left-btn > svg {
+  pointer-events: none;
+} */
+
+.delete-btn {
+  background-color: #c94c4c;
+}
+.right-btn,
+.left-btn {
+  background-color: #4caf50;
+}
+.task {
+  background-color: #e6e2d3;
+  padding: 0.5rem;
+  gap: 10px;
+  align-items: center;
+  border-radius: 5px;
+}
+.task span {
+  width: 80%;
+}
