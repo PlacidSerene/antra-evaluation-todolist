@@ -76,14 +76,12 @@ export const Controller = ((view, model) => {
     view.todolistEl.addEventListener("click", (event) => {
       if (event.target.className === "right-btn") {
         const id = event.target.id;
-        const currentContent =
-          event.target.previousElementSibling.previousElementSibling
-            .previousElementSibling;
-        const newContent = currentContent.textContent;
-        console.log(currentContent);
+        const li = event.target.parentNode;
+        const span = li.getElementsByTagName("span")[0];
+        const currentContent = span.textContent;
 
         model
-          .updateTodo(id, { content: newContent, status: "complete" })
+          .updateTodo(id, { content: currentContent, status: "complete" })
           .then((data) => {
             state.todos = state.todos.filter((todo) => todo.id !== data.id);
             state.completed = [data, ...state.completed];
@@ -96,35 +94,9 @@ export const Controller = ((view, model) => {
     view.completedTodolistEl.addEventListener("click", (event) => {
       if (event.target.className === "left-btn") {
         const id = event.target.id;
-        const currentContent =
-          event.target.previousElementSibling.previousElementSibling
-            .previousElementSibling;
-        const newContent = currentContent.textContent;
-        console.log(currentContent);
-
-        model
-          .updateTodo(id, { content: newContent, status: "pending" })
-          .then((data) => {
-            state.todos = [data, ...state.todos];
-            state.completed = state.completed.filter(
-              (completed) => completed.id !== data.id
-            );
-          });
-      }
-    });
-  };
-
-  const handleLeftShift2 = () => {
-    view.completedTodolistEl.addEventListener("click", (event) => {
-      if (event.target.className === "left-btn") {
-        console.log("clicked");
-        const id = event.target.id;
         const li = event.target.parentNode;
-        const span = li.getElementsByTagName("span");
+        const span = li.getElementsByTagName("span")[0];
         const currentContent = span.textContent;
-
-        // const newContent = currentContent.textContent;
-        console.log(currentContent);
 
         model
           .updateTodo(id, { content: currentContent, status: "pending" })
@@ -153,8 +125,7 @@ export const Controller = ((view, model) => {
     handleDelete();
     handleEdit();
     handleRightShift();
-    // handleLeftShift();
-    handleLeftShift2();
+    handleLeftShift();
     state.subscribe(() => {
       view.renderTodos(state.todos);
       view.renderCompletedTodos(state.completed);

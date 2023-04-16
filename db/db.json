@@ -1,17 +1,12 @@
 {
   "todos": [
     {
-      "content": "undefined123213123",
+      "content": "I finished the project!",
       "status": "complete",
       "id": 2
     },
     {
-      "content": "123123adsad",
-      "status": "pending",
-      "id": 3
-    },
-    {
-      "content": "undefined 12312123123",
+      "content": "hello world1 ",
       "status": "pending",
       "id": 5
     }
