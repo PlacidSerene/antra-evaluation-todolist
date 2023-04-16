@@ -38,7 +38,8 @@ export const Controller = ((view, model) => {
           const id = event.target.id;
           if (event.target.textContent === "edit") {
             const li = event.target.parentNode;
-            const span = li.firstElementChild;
+            const span = li.getElementsByTagName("span")[0];
+            console.log(span);
             const input = document.createElement("input");
             input.type = "text";
             input.value = span.textContent;
@@ -47,7 +48,7 @@ export const Controller = ((view, model) => {
             event.target.textContent = "save";
           } else if (event.target.textContent === "save") {
             const li = event.target.parentNode;
-            const input = li.firstElementChild;
+            const input = li.getElementsByTagName("input")[0];
             const span = document.createElement("span");
             span.textContent = input.value;
             li.insertBefore(span, input);
@@ -95,7 +96,6 @@ export const Controller = ((view, model) => {
     view.completedTodolistEl.addEventListener("click", (event) => {
       if (event.target.className === "left-btn") {
         const id = event.target.id;
-        console.log(id);
         const currentContent =
           event.target.previousElementSibling.previousElementSibling
             .previousElementSibling;
@@ -114,15 +114,36 @@ export const Controller = ((view, model) => {
     });
   };
 
+  const handleLeftShift2 = () => {
+    view.completedTodolistEl.addEventListener("click", (event) => {
+      if (event.target.className === "left-btn") {
+        console.log("clicked");
+        const id = event.target.id;
+        const li = event.target.parentNode;
+        const span = li.getElementsByTagName("span");
+        const currentContent = span.textContent;
+
+        // const newContent = currentContent.textContent;
+        console.log(currentContent);
+
+        model
+          .updateTodo(id, { content: currentContent, status: "pending" })
+          .then((data) => {
+            state.todos = [data, ...state.todos];
+            state.completed = state.completed.filter(
+              (completed) => completed.id !== data.id
+            );
+          });
+      }
+    });
+  };
+
   const init = () => {
     model.getTodos().then((todos) => {
-      //   todos.reverse();
       state.todos = todos.reverse().filter((todo) => todo.status === "pending");
       state.completed = todos
         .reverse()
         .filter((todo) => todo.status === "complete");
-      //   view.renderTodos(state.todos);
-      //   view.renderCompletedTodos(state.completed);
     });
   };
 
@@ -132,7 +153,8 @@ export const Controller = ((view, model) => {
     handleDelete();
     handleEdit();
     handleRightShift();
-    handleLeftShift();
+    // handleLeftShift();
+    handleLeftShift2();
     state.subscribe(() => {
       view.renderTodos(state.todos);
       view.renderCompletedTodos(state.completed);
