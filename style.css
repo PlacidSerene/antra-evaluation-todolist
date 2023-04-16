@@ -86,13 +86,14 @@ html {
   text-align: left;
 }
 
-/* .delete-btn,
+.delete-btn,
 .edit-btn,
 .right-btn,
 .left-btn {
-  width: 2rem;
-  height: 1.5rem;
-} */
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 8px;
+}
 
 /* .delete-btn,
 .right-btn,
@@ -102,6 +103,9 @@ html {
 
 .delete-btn {
   background-color: #c94c4c;
+}
+.edit-btn {
+  background-color: #008cba;
 }
 .right-btn,
 .left-btn {
@@ -115,5 +119,5 @@ html {
   border-radius: 5px;
 }
 .task span {
-  width: 80%;
+  width: 90%;
 }
