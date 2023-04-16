@@ -30,7 +30,7 @@ export const View = (() => {
       const liTemplate = `
             <li class="task">
             <span>${comp.content}</span>
-            <button class="edit-btn" id="${comp.id}">Edit</button>
+            <button class="edit-btn" id="${comp.id}">edit</button>
             <button class="delete-btn" id="${comp.id}">delete</button>
             <button class="left-btn" id="${comp.id}">left</button>
             </li>`;
