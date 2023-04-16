@@ -95,11 +95,18 @@ html {
   border-radius: 8px;
 }
 
-/* .delete-btn,
-.right-btn,
+.delete-btn > svg {
+  pointer-events: none;
+}
+.edit-btn > svg {
+  pointer-events: none;
+}
+.right-btn > svg {
+  pointer-events: none;
+}
 .left-btn > svg {
   pointer-events: none;
-} */
+}
 
 .delete-btn {
   background-color: #c94c4c;
@@ -119,5 +126,5 @@ html {
   border-radius: 5px;
 }
 .task span {
-  width: 90%;
+  width: 80%;
 }

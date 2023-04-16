@@ -35,7 +35,6 @@ export const Controller = ((view, model) => {
     [view.todolistEl, view.completedTodolistEl].forEach((item) => {
       item.addEventListener("click", (event) => {
         if (event.target.className === "edit-btn") {
-          console.log("clicked!");
           const id = event.target.id;
           if (event.target.textContent === "edit") {
             const li = event.target.parentNode;
@@ -54,7 +53,6 @@ export const Controller = ((view, model) => {
             li.insertBefore(span, input);
             li.removeChild(input);
             event.target.textContent = "edit";
-            // console.log("here");
             console.log(item.className);
             let status = "pending";
             if (item.className === "completed-todo-list") {
