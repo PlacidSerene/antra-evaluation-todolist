@@ -11,7 +11,8 @@ export const View = (() => {
       const liTemplate = `
             <li class="task">
                 <span>${todo.content}</span>
-                <button class="edit-btn" id="${todo.id}">edit</button>
+                <button class="edit-btn" id="${todo.id}"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"  aria-label="fontSize small" fill="#fff"
+      width="20px"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></button>
                 <button class="delete-btn" id="${todo.id}"><svg
       focusable="false"
       aria-hidden="true"
@@ -63,7 +64,8 @@ export const View = (() => {
       ></path>
     </svg></button>
             <span>${comp.content}</span>
-            <button class="edit-btn" id="${comp.id}">edit</button>
+            <button class="edit-btn" id="${comp.id}"><svg focusable="false" aria-hidden="true" viewBox="0 0 24 24"  aria-label="fontSize small" fill="#fff"
+      width="20px"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></button>
             <button class="delete-btn" id="${comp.id}"><svg
       focusable="false"
       aria-hidden="true"

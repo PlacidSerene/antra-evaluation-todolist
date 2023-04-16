@@ -36,25 +36,21 @@ export const Controller = ((view, model) => {
       item.addEventListener("click", (event) => {
         if (event.target.className === "edit-btn") {
           const id = event.target.id;
-          if (event.target.textContent === "edit") {
-            const li = event.target.parentNode;
+          const li = event.target.parentNode;
+          const span = li.getElementsByTagName("span");
+          if (span.length !== 0) {
             const span = li.getElementsByTagName("span")[0];
-            console.log(span);
             const input = document.createElement("input");
             input.type = "text";
             input.value = span.textContent;
             li.insertBefore(input, span);
             li.removeChild(span);
-            event.target.textContent = "save";
-          } else if (event.target.textContent === "save") {
-            const li = event.target.parentNode;
+          } else {
             const input = li.getElementsByTagName("input")[0];
             const span = document.createElement("span");
             span.textContent = input.value;
             li.insertBefore(span, input);
             li.removeChild(input);
-            event.target.textContent = "edit";
-            console.log(item.className);
             let status = "pending";
             if (item.className === "completed-todo-list") {
               status = "complete";

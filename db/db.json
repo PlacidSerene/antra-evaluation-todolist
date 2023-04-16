@@ -1,14 +1,9 @@
 {
   "todos": [
     {
-      "content": "I finished the project!",
-      "status": "complete",
-      "id": 2
-    },
-    {
-      "content": "hello world1 ",
+      "content": "I finished the projec now!",
       "status": "pending",
-      "id": 5
+      "id": 2
     }
   ]
 }
